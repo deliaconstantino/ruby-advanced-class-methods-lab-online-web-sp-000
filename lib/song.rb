@@ -35,5 +35,7 @@ class Song
     end
   end
 
-  
+  def self
+
+
 end
