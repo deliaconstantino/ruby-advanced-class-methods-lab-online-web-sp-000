@@ -41,22 +41,13 @@ class Song
     end
   end
 
-#why doesn;t this work, looks like bc creates nil (not an object) and can't call .name on nil
-  # def self.find_or_create_by_name(name)
-  #   if self.find_by_name(name).name == self.create_by_name(name).name
-  #     return self.find_by_name(name)
-  #   else
-  #     self.create_by_name(name)
-  #   end
-  # end
-#other ideas:
-# if self.find_by_name(name) ? self.find_by_name(name) : self.create_by_name(name)
-# self.create_by_name(name) unless self.find_by_name(name)
-
   def self.alphabetical
     self.all.sort_by do |song_object|
       song_object.name
     end
   end
+
+  def self.new_from_filename(filename)
+    files = filename.split("-")
 
 end
