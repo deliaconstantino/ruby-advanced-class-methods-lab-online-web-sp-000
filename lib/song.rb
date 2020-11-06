@@ -53,10 +53,13 @@ class Song
 # if self.find_by_name(name) ? self.find_by_name(name) : self.create_by_name(name)
 # self.create_by_name(name) unless self.find_by_name(name)
 
-def self.alphabetical
-  self.all.sort do |a, b|
-    a.name <=> b.name
+def self.alphabetical 
+  self.all.sort_by do |song_object|
+    song_object.name
   end
+  # self.all.sort do |a, b|
+  #   a.name <=> b.name
+  # end
 end
 
 end
