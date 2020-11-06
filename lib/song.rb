@@ -57,9 +57,4 @@ def self.alphabetical
   self.all.sort_by do |song_object|
     song_object.name
   end
-  # self.all.sort do |a, b|
-  #   a.name <=> b.name
-  # end
-end
-
 end
