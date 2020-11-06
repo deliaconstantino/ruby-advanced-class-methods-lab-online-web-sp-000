@@ -30,6 +30,8 @@ class Song
   end
 
   def self.find_by_name(name)
-    self.all.each do 
-
+    self.all.find do |song_object|
+      song_object.name == name
+    end
+  end
 end
