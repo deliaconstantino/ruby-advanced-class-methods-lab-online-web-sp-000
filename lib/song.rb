@@ -35,7 +35,15 @@ class Song
     end
   end
 
-  def self
+  def self.find_or_create_by_name(name)
+    #iterate through the class array
+    #for each check if song is already there--which we did above in fin_by name
+      #if so, return song name
+      #else create-by_ name which we also did above
+
+    if Song.find_by_name(name) != nil
+    
+  end
 
 
 end
