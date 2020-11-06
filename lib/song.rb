@@ -54,8 +54,9 @@ class Song
 # self.create_by_name(name) unless self.find_by_name(name)
 
 def self.alphabetical
-  self.all.collect do |song_object|
+  self.all.sort_by do |song_object|
     
+
 end
 
 end
