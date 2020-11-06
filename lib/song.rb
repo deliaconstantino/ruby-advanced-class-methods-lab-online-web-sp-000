@@ -43,6 +43,7 @@ class Song
     #   self.find_by_name(name)
     # end
   end
+end
 
 #why doesn;t this work, looks like bc creates nil (not an object) and can't call .name on nil
   # def self.find_or_create_by_name(name)
