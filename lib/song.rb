@@ -53,8 +53,8 @@ class Song
     song_name = files[1].chomp(".mp3")
 
     song = self.new
-    song.name = files[1].chomp(".mp3")
-    song.artist_name = files[0]
+    song.name = song_name
+    song.artist_name = artist
     song
   end
 
