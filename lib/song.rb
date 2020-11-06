@@ -34,15 +34,12 @@ class Song
   end
 
   def self.find_or_create_by_name(name)
-    if self.find_by_name(name) ? (self.find_by_name(name)) : (self.create_by_name(name))
-    # self.create_by_name(name) unless self.find_by_name(name)
+    if self.find_by_name(name) == nil
+      self.create_by_name(name)
+    else
+      self.find_by_name(name)
+    end
 
-    # if self.find_by_name(name) == nil
-    #   self.create_by_name(name)
-    # else
-    #   self.find_by_name(name)
-    # end
-  end
 end
 
 #why doesn;t this work, looks like bc creates nil (not an object) and can't call .name on nil
@@ -53,6 +50,9 @@ end
   #     self.create_by_name(name)
   #   end
   # end
+#other ideas:
+# if self.find_by_name(name) ? self.find_by_name(name) : self.create_by_name(name)
+# self.create_by_name(name) unless self.find_by_name(name)
 
 
 end
