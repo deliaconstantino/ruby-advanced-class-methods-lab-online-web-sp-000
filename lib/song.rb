@@ -33,18 +33,21 @@ class Song
     self.all.find{|song_object| song_object.name == name}
   end
 
+  # def self.find_or_create_by_name(name)
+  #   if self.find_by_name(name) == nil
+  #     self.create_by_name(name)
+  #   else
+  #     self.find_by_name(name)
+  #   end
+  # end
+
+#why doesn;t this work:
   def self.find_or_create_by_name(name)
-    #iterate through the class array
-    #for each check if song is already there--which we did above in fin_by name
-      #if so, return song name
-      #else create-by_ name which we also did above
-
-    if self.find_by_name(name) == nil
-      self.create_by_name(name)
+    if self.find_by_name(name).name == self.create_by_name(name).name
+      return self.find_by_name(name)
     else
-      self.find_by_name(name)
+      self.create_by_name(name)
     end
-
   end
 
 
