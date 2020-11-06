@@ -33,22 +33,22 @@ class Song
     self.all.find{|song_object| song_object.name == name}
   end
 
-  # def self.find_or_create_by_name(name)
-  #   if self.find_by_name(name) == nil
-  #     self.create_by_name(name)
-  #   else
-  #     self.find_by_name(name)
-  #   end
-  # end
-
-#why doesn;t this work:
   def self.find_or_create_by_name(name)
-    if self.find_by_name(name).name == self.create_by_name(name).name
-      return self.find_by_name(name)
-    else
+    if self.find_by_name(name) == nil
       self.create_by_name(name)
+    else
+      self.find_by_name(name)
     end
   end
+
+#why doesn;t this work, looks like bc creates nil (not an object) and can't call .name on nil
+  # def self.find_or_create_by_name(name)
+  #   if self.find_by_name(name).name == self.create_by_name(name).name
+  #     return self.find_by_name(name)
+  #   else
+  #     self.create_by_name(name)
+  #   end
+  # end
 
 
 end
