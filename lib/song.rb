@@ -41,7 +41,11 @@ class Song
       #if so, return song name
       #else create-by_ name which we also did above
 
-    if Song.find_by_name(name) != nil
+    if self.find_by_name(name) == self.create_by_name(name)
+      return self.find_by_name(name)
+    else
+      self.create_by_name(name)
+    end
     
   end
 
