@@ -62,5 +62,6 @@ def self.create_from_filename(filename)
   self.new_from_filename
   self.save
   self
+end
 
 end
